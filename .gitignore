@@ -1,0 +1,7 @@
+lib
+bin
+lib64
+share
+__pycache__
+*.png
+*.img

@@ -1,0 +1,707 @@
+Some cookies are misusing the recommended “SameSite“ attribute 227
+document.getElementsByClassName("name_bold")
+HTMLCollection { 0: span.name_bold, 1: span.name_bold, 2: span.name_bold, 3: span.name_bold, 4: span.name_bold, 5: span.name_bold, 6: span.name_bold, 7: span.name_bold, 8: span.name_bold, 9: span.name_bold, … }
+
+x = document.getElementsByClassName("name_bold")
+HTMLCollection { 0: span.name_bold, 1: span.name_bold, 2: span.name_bold, 3: span.name_bold, 4: span.name_bold, 5: span.name_bold, 6: span.name_bold, 7: span.name_bold, 8: span.name_bold, 9: span.name_bold, … }
+
+for (i = 0; i < x.length(), i++) {
+  
+}
+Uncaught SyntaxError: missing ; after for-loop condition debugger eval code:1:32
+for (i = 0; i < x.length(), i++) {
+ x[i].span 
+}
+Uncaught SyntaxError: missing ; after for-loop condition debugger eval code:1:32
+x[0]
+<span class="name_bold">
+
+x[0].textContent
+"Holmberg"
+for (i = 0; i < x.length(), i++) {
+ x[i].text 
+}
+Uncaught SyntaxError: missing ; after for-loop condition debugger eval code:1:32
+x[0].textContent
+"Holmberg"
+for (i = 0; i < x.length(), i++) {
+ x[i].textContent
+}
+Uncaught SyntaxError: missing ; after for-loop condition debugger eval code:1:32
+for (i = 0; i < x.length(), i++) {
+ console.log(x[i].textContent);
+}
+Uncaught SyntaxError: missing ; after for-loop condition debugger eval code:1:32
+for (i = 0; i < x.length(); i++) {
+ console.log(x[i].textContent);
+}
+Uncaught TypeError: x.length is not a function
+    <anonymous> debugger eval code:1
+debugger eval code:1:19
+for (i = 0; i < x.length; i++) {
+ console.log(x[i].textContent);
+}
+Holmberg debugger eval code:2:10
+Häll Wesslau debugger eval code:2:10
+Abbasi Persson debugger eval code:2:10
+Adolphson debugger eval code:2:10
+Al Hassani debugger eval code:2:10
+Al-Bacha debugger eval code:2:10
+Alagic debugger eval code:2:10
+Aleman debugger eval code:2:10
+Ali Abdi Hassan debugger eval code:2:10
+Ali Akbar debugger eval code:2:10
+Aljaffar debugger eval code:2:10
+Alkemar debugger eval code:2:10
+Alvolin debugger eval code:2:10
+Andersson debugger eval code:2:10
+Andersson Kvist debugger eval code:2:10
+Andrén debugger eval code:2:10
+Anstey debugger eval code:2:10
+Argus debugger eval code:2:10
+Aruhn debugger eval code:2:10
+Astudillo Viklund debugger eval code:2:10
+Belander debugger eval code:2:10
+Bengtsson 2 debugger eval code:2:10
+Berglund debugger eval code:2:10
+Bergman debugger eval code:2:10
+Bergström debugger eval code:2:10
+Bjurbäck Gustafsson debugger eval code:2:10
+Björklund debugger eval code:2:10
+Björndahl debugger eval code:2:10
+Brimberg debugger eval code:2:10
+Bårman debugger eval code:2:10
+Börjesdotter debugger eval code:2:10
+Carlgren debugger eval code:2:10
+Carlsson debugger eval code:2:10
+Castenskiold debugger eval code:2:10
+Cederberg debugger eval code:2:10
+Collin debugger eval code:2:10
+Constantine debugger eval code:2:10
+Cronlund debugger eval code:2:10
+Danis debugger eval code:2:10
+Davila debugger eval code:2:10
+Demirtas debugger eval code:2:10
+Diser debugger eval code:2:10
+Dollevoet debugger eval code:2:10
+Ebeling Quirante debugger eval code:2:10
+Edman 2 debugger eval code:2:10
+Edmark debugger eval code:2:10
+Ehrs debugger eval code:2:10
+Ekholm debugger eval code:2:10
+Engqvist debugger eval code:2:10
+Enocson debugger eval code:2:10
+Ericson debugger eval code:2:10
+Ericsson debugger eval code:2:10
+Eriksson 2 debugger eval code:2:10
+Eriksson Brandt debugger eval code:2:10
+Erlandsson debugger eval code:2:10
+Ernlund debugger eval code:2:10
+Evers debugger eval code:2:10
+Fors Rosén debugger eval code:2:10
+Fritzson debugger eval code:2:10
+Fugelstad debugger eval code:2:10
+Fungula Björlin debugger eval code:2:10
+Fåhraeus debugger eval code:2:10
+Gallego Holmström debugger eval code:2:10
+Ghafor debugger eval code:2:10
+Ghazi Nahi debugger eval code:2:10
+Gille debugger eval code:2:10
+Gottschalk debugger eval code:2:10
+Goyeryd debugger eval code:2:10
+Grafström debugger eval code:2:10
+Greder debugger eval code:2:10
+Green debugger eval code:2:10
+Griberg debugger eval code:2:10
+Gunnarsson debugger eval code:2:10
+Gustafsson 2 debugger eval code:2:10
+Gutman debugger eval code:2:10
+Göthe debugger eval code:2:10
+Hagersten debugger eval code:2:10
+Haglund debugger eval code:2:10
+Hahlin debugger eval code:2:10
+Hallgren debugger eval code:2:10
+Halvardson Jah debugger eval code:2:10
+Halvarsson debugger eval code:2:10
+Hartikka debugger eval code:2:10
+Hassel debugger eval code:2:10
+Hedström debugger eval code:2:10
+Heier Lundberg debugger eval code:2:10
+Helenius debugger eval code:2:10
+Hellqvist debugger eval code:2:10
+Hermiz Rundquist debugger eval code:2:10
+Himmelstrand debugger eval code:2:10
+Hirori debugger eval code:2:10
+Holguin Medina debugger eval code:2:10
+Holmberg debugger eval code:2:10
+Holmén Bränn debugger eval code:2:10
+Holmström debugger eval code:2:10
+Hosseini Naghavi debugger eval code:2:10
+Håkansson debugger eval code:2:10
+Ifoudine debugger eval code:2:10
+Ismailov debugger eval code:2:10
+Jabarian debugger eval code:2:10
+Jansson debugger eval code:2:10
+Jarvis Sigfelt debugger eval code:2:10
+Jelinek debugger eval code:2:10
+Jersild debugger eval code:2:10
+Johansson 2 debugger eval code:2:10
+Jonsson debugger eval code:2:10
+Joshi debugger eval code:2:10
+Kalid debugger eval code:2:10
+Kiehl debugger eval code:2:10
+Kormi Nouri debugger eval code:2:10
+Kristoffersson debugger eval code:2:10
+Kvensler debugger eval code:2:10
+Kårfalk debugger eval code:2:10
+Lagerkrans Stålhandske debugger eval code:2:10
+Lapsley debugger eval code:2:10
+Larsson 5 debugger eval code:2:10
+Larsson Sevon debugger eval code:2:10
+Ledenholm debugger eval code:2:10
+Leone Nordström debugger eval code:2:10
+Lexander debugger eval code:2:10
+Lind debugger eval code:2:10
+Lindskog Krasznai debugger eval code:2:10
+Lindstedt debugger eval code:2:10
+Lu debugger eval code:2:10
+Luboja debugger eval code:2:10
+Makdesi-Salminen debugger eval code:2:10
+Malki debugger eval code:2:10
+Mallouppas Wetterström debugger eval code:2:10
+Mardanian debugger eval code:2:10
+Martinsson debugger eval code:2:10
+Mazur debugger eval code:2:10
+Mc Carthy debugger eval code:2:10
+Meydan debugger eval code:2:10
+Mir Yeganeh Langroudi debugger eval code:2:10
+Molin debugger eval code:2:10
+Monemar debugger eval code:2:10
+Musatova debugger eval code:2:10
+Mühr debugger eval code:2:10
+Målberg debugger eval code:2:10
+Mökander debugger eval code:2:10
+Nekoian debugger eval code:2:10
+Nilsson debugger eval code:2:10
+Nordgren debugger eval code:2:10
+Nordin debugger eval code:2:10
+Norée debugger eval code:2:10
+Nygård debugger eval code:2:10
+Nykvist debugger eval code:2:10
+Nyreröd debugger eval code:2:10
+Odenstad debugger eval code:2:10
+Ohlsén debugger eval code:2:10
+Oldner Bengtsson debugger eval code:2:10
+Olsson 3 debugger eval code:2:10
+Opsahl debugger eval code:2:10
+Ottosson debugger eval code:2:10
+Pernholm debugger eval code:2:10
+Persson 2 debugger eval code:2:10
+Petersson 2 debugger eval code:2:10
+Petrovic debugger eval code:2:10
+Pettersson 3 debugger eval code:2:10
+Praxmarer debugger eval code:2:10
+Prytz debugger eval code:2:10
+Pyhäjärvi debugger eval code:2:10
+Quintana Segala debugger eval code:2:10
+Ramazani debugger eval code:2:10
+Rashidi debugger eval code:2:10
+Ravier-Bollard debugger eval code:2:10
+Rofes Vernhes debugger eval code:2:10
+Rudenko debugger eval code:2:10
+Ruhr Siwers debugger eval code:2:10
+Runesson debugger eval code:2:10
+Rörling debugger eval code:2:10
+Said Hassan debugger eval code:2:10
+Saliba debugger eval code:2:10
+Sanner debugger eval code:2:10
+Schedin debugger eval code:2:10
+Schilke debugger eval code:2:10
+Siewertz Löfström debugger eval code:2:10
+Sintnicolaas debugger eval code:2:10
+Sitaki debugger eval code:2:10
+Sjöström debugger eval code:2:10
+Skoglund debugger eval code:2:10
+Smith debugger eval code:2:10
+Steiring debugger eval code:2:10
+Stenbeck debugger eval code:2:10
+Stenkvist debugger eval code:2:10
+Stenqvist debugger eval code:2:10
+Stjerna debugger eval code:2:10
+Strömdahl-Sherman debugger eval code:2:10
+Stårsta debugger eval code:2:10
+Sundqvist debugger eval code:2:10
+Sunmark debugger eval code:2:10
+Svensson debugger eval code:2:10
+Sylwan debugger eval code:2:10
+Söderlund debugger eval code:2:10
+Söderström 2 debugger eval code:2:10
+Tarrodi Orlunder debugger eval code:2:10
+Tchoumak debugger eval code:2:10
+Thelander debugger eval code:2:10
+Thilander debugger eval code:2:10
+Thärnström debugger eval code:2:10
+Tjärdal debugger eval code:2:10
+Tóth debugger eval code:2:10
+Vakans 12 debugger eval code:2:10
+Vakans 1 3 debugger eval code:2:10
+Vakans 2 2 debugger eval code:2:10
+Vakans 3 debugger eval code:2:10
+Vakans 4 debugger eval code:2:10
+Vakans 5 debugger eval code:2:10
+Vakans 6 debugger eval code:2:10
+VakantIV debugger eval code:2:10
+Vasilyeva debugger eval code:2:10
+Vinger debugger eval code:2:10
+Vrethammar debugger eval code:2:10
+Wallerström debugger eval code:2:10
+Wiwe debugger eval code:2:10
+Wreber debugger eval code:2:10
+Wretljung debugger eval code:2:10
+Yesilgül debugger eval code:2:10
+Åberg debugger eval code:2:10
+Åslund debugger eval code:2:10
+Öberg 2 debugger eval code:2:10
+Ölcer debugger eval code:2:10
+Österberg debugger eval code:2:10
+Alvåg debugger eval code:2:10
+Anderzén debugger eval code:2:10
+Berge Birath debugger eval code:2:10
+Betsikokos Jansson debugger eval code:2:10
+Birkmanis debugger eval code:2:10
+Bjuhr debugger eval code:2:10
+Blomgren debugger eval code:2:10
+Bodin debugger eval code:2:10
+Bryntse debugger eval code:2:10
+Cohen debugger eval code:2:10
+Dufort Y Alvarez Phoyu debugger eval code:2:10
+Ericsson debugger eval code:2:10
+Erik debugger eval code:2:10
+Fugelstad debugger eval code:2:10
+Giouvantsi debugger eval code:2:10
+Haldin debugger eval code:2:10
+Hammarström debugger eval code:2:10
+Hellebro Löfling debugger eval code:2:10
+Hillgren debugger eval code:2:10
+Häll Wesslau debugger eval code:2:10
+Isaksson debugger eval code:2:10
+Kibal debugger eval code:2:10
+Kidby Lindhagen debugger eval code:2:10
+Killander debugger eval code:2:10
+Lagerström debugger eval code:2:10
+Lannfjäll debugger eval code:2:10
+Lenneby debugger eval code:2:10
+Malmberg Hedlund debugger eval code:2:10
+Medin Engdahl debugger eval code:2:10
+Mäkelä debugger eval code:2:10
+Nygren debugger eval code:2:10
+Olin debugger eval code:2:10
+Olofsson debugger eval code:2:10
+Rafiq debugger eval code:2:10
+Roots debugger eval code:2:10
+Rosén debugger eval code:2:10
+Rune debugger eval code:2:10
+Sahlin debugger eval code:2:10
+Sparreman debugger eval code:2:10
+Sälgström debugger eval code:2:10
+Söderberg debugger eval code:2:10
+Tamm debugger eval code:2:10
+Tegeback debugger eval code:2:10
+Unosson debugger eval code:2:10
+Utas debugger eval code:2:10
+Vateman Eriksson debugger eval code:2:10
+Wallin debugger eval code:2:10
+Westin debugger eval code:2:10
+Wreber debugger eval code:2:10
+Wredström debugger eval code:2:10
+Zetterlund 2 debugger eval code:2:10
+Andersson debugger eval code:2:10
+Björkqvist debugger eval code:2:10
+Camara debugger eval code:2:10
+Edström debugger eval code:2:10
+Ekberg debugger eval code:2:10
+Elwin debugger eval code:2:10
+Fringel debugger eval code:2:10
+Fritzson debugger eval code:2:10
+Hirori debugger eval code:2:10
+Jonsson debugger eval code:2:10
+Kangas debugger eval code:2:10
+Kubin Gustafsson debugger eval code:2:10
+Larson debugger eval code:2:10
+Petrovic debugger eval code:2:10
+Ragnhult debugger eval code:2:10
+Rojas debugger eval code:2:10
+Stigamo debugger eval code:2:10
+Tekmil debugger eval code:2:10
+Acaralp debugger eval code:2:10
+Ghaemi debugger eval code:2:10
+Girmay debugger eval code:2:10
+Kader debugger eval code:2:10
+Rabah debugger eval code:2:10
+Tadic debugger eval code:2:10
+Torres Blandon debugger eval code:2:10
+undefined
+x[0].parentElement
+<td>
+
+x[0].parentElement.textContent
+"Holmberg Hedvig"
+for (i = 0; i < x.length; i++) {
+ console.log(x[i].parentElent.textContent);
+}
+Uncaught TypeError: x[i].parentElent is undefined
+    <anonymous> debugger eval code:2
+debugger eval code:2:14
+for (i = 0; i < x.length; i++) {
+ console.log(x[i].parentElement.textContent);
+}
+Holmberg Hedvig debugger eval code:2:10
+Häll Wesslau Ellinor debugger eval code:2:10
+Abbasi Persson Ashkan debugger eval code:2:10
+Adolphson Jan debugger eval code:2:10
+Al Hassani Hajer debugger eval code:2:10
+Al-Bacha Hind debugger eval code:2:10
+Alagic Murisa debugger eval code:2:10
+Aleman Fredrika debugger eval code:2:10
+Ali Abdi Hassan Said debugger eval code:2:10
+Ali Akbar Mohammad debugger eval code:2:10
+Aljaffar Alice debugger eval code:2:10
+Alkemar Gunnar debugger eval code:2:10
+Alvolin Linda debugger eval code:2:10
+Andersson Nina debugger eval code:2:10
+Andersson Kvist Nina debugger eval code:2:10
+Andrén Ulrika debugger eval code:2:10
+Anstey Emma debugger eval code:2:10
+Argus Mattias debugger eval code:2:10
+Aruhn Urban debugger eval code:2:10
+Astudillo Viklund Suzanne debugger eval code:2:10
+Belander Anna debugger eval code:2:10
+Bengtsson Mikael debugger eval code:2:10
+Bengtsson Moa debugger eval code:2:10
+Berglund Lena debugger eval code:2:10
+Bergman Gustav debugger eval code:2:10
+Bergström Mårten debugger eval code:2:10
+Bjurbäck Gustafsson Matilda debugger eval code:2:10
+Björklund Eva-Karin debugger eval code:2:10
+Björndahl Angélica debugger eval code:2:10
+Brimberg Andreas debugger eval code:2:10
+Bårman Sofia debugger eval code:2:10
+Börjesdotter Ulla-Carin debugger eval code:2:10
+Carlgren Gunilla debugger eval code:2:10
+Carlsson Martin debugger eval code:2:10
+Castenskiold Christian debugger eval code:2:10
+Cederberg Karl Olof debugger eval code:2:10
+Collin Jenny debugger eval code:2:10
+Constantine Marina-Bel debugger eval code:2:10
+Cronlund Lena debugger eval code:2:10
+Danis Solveig debugger eval code:2:10
+Davila Marcela debugger eval code:2:10
+Demirtas Feyza debugger eval code:2:10
+Diser Johan debugger eval code:2:10
+Dollevoet Kim debugger eval code:2:10
+Ebeling Quirante Cecilia debugger eval code:2:10
+Edman Erica debugger eval code:2:10
+Edman Richard debugger eval code:2:10
+Edmark Christopher debugger eval code:2:10
+Ehrs Erik debugger eval code:2:10
+Ekholm Ylva debugger eval code:2:10
+Engqvist Mathilda debugger eval code:2:10
+Enocson Mikael debugger eval code:2:10
+Ericson Alexandra debugger eval code:2:10
+Ericsson Kristina debugger eval code:2:10
+Eriksson Ulrika debugger eval code:2:10
+Eriksson Åke debugger eval code:2:10
+Eriksson Brandt Ulrika debugger eval code:2:10
+Erlandsson Daniel debugger eval code:2:10
+Ernlund Sigrid debugger eval code:2:10
+Evers Carl Johan debugger eval code:2:10
+Fors Rosén Ellen debugger eval code:2:10
+Fritzson Tobias debugger eval code:2:10
+Fugelstad Anna-Lena debugger eval code:2:10
+Fungula Björlin Bob debugger eval code:2:10
+Fåhraeus Marie debugger eval code:2:10
+Gallego Holmström Emma debugger eval code:2:10
+Ghafor Awaz debugger eval code:2:10
+Ghazi Nahi Eva debugger eval code:2:10
+Gille Stig debugger eval code:2:10
+Gottschalk Ingo debugger eval code:2:10
+Goyeryd Ingvor debugger eval code:2:10
+Grafström Björn debugger eval code:2:10
+Greder Carl debugger eval code:2:10
+Green Jenny debugger eval code:2:10
+Griberg Sofie debugger eval code:2:10
+Gunnarsson Anita debugger eval code:2:10
+Gustafsson Nina debugger eval code:2:10
+Gustafsson Ola debugger eval code:2:10
+Gutman Tanja debugger eval code:2:10
+Göthe Carin debugger eval code:2:10
+Hagersten Carl Victor debugger eval code:2:10
+Haglund Johan debugger eval code:2:10
+Hahlin Lars-Ola debugger eval code:2:10
+Hallgren Niklas debugger eval code:2:10
+Halvardson Jah Johanna debugger eval code:2:10
+Halvarsson Jonas debugger eval code:2:10
+Hartikka Marja debugger eval code:2:10
+Hassel Birgitta debugger eval code:2:10
+Hedström Agnetha debugger eval code:2:10
+Heier Lundberg Sabina debugger eval code:2:10
+Helenius Susanna debugger eval code:2:10
+Hellqvist Astrid debugger eval code:2:10
+Hermiz Rundquist Sarah debugger eval code:2:10
+Himmelstrand Markus debugger eval code:2:10
+Hirori Derya debugger eval code:2:10
+Holguin Medina Carlos debugger eval code:2:10
+Holmberg Hedvig debugger eval code:2:10
+Holmén Bränn Kristina debugger eval code:2:10
+Holmström Bo debugger eval code:2:10
+Hosseini Naghavi Keivan debugger eval code:2:10
+Håkansson Anders debugger eval code:2:10
+Ifoudine El Houssaine debugger eval code:2:10
+Ismailov Dzhenker debugger eval code:2:10
+Jabarian Shadi debugger eval code:2:10
+Jansson Sara debugger eval code:2:10
+Jarvis Sigfelt Elisabeth debugger eval code:2:10
+Jelinek Tomas debugger eval code:2:10
+Jersild Jonas debugger eval code:2:10
+Johansson Erik debugger eval code:2:10
+Johansson Linda debugger eval code:2:10
+Jonsson Bodil debugger eval code:2:10
+Joshi Mandar debugger eval code:2:10
+Kalid Hivi debugger eval code:2:10
+Kiehl Franziska debugger eval code:2:10
+Kormi Nouri Setayesh debugger eval code:2:10
+Kristoffersson Sofie debugger eval code:2:10
+Kvensler Pernilla debugger eval code:2:10
+Kårfalk Lotten debugger eval code:2:10
+Lagerkrans Stålhandske Christine debugger eval code:2:10
+Lapsley Jenny debugger eval code:2:10
+Larsson Cecilia debugger eval code:2:10
+Larsson Gunnar debugger eval code:2:10
+Larsson Hanna debugger eval code:2:10
+Larsson Joel debugger eval code:2:10
+Larsson Karin debugger eval code:2:10
+Larsson Sevon Rebecca debugger eval code:2:10
+Ledenholm Linnea debugger eval code:2:10
+Leone Nordström Jenny debugger eval code:2:10
+Lexander Helena debugger eval code:2:10
+Lind Carl-Johan debugger eval code:2:10
+Lindskog Krasznai Maria debugger eval code:2:10
+Lindstedt Gudrun debugger eval code:2:10
+Lu Jacqueline debugger eval code:2:10
+Luboja Isabella debugger eval code:2:10
+Makdesi-Salminen Klaus debugger eval code:2:10
+Malki Medra debugger eval code:2:10
+Mallouppas Wetterström Sofia debugger eval code:2:10
+Mardanian Marjan debugger eval code:2:10
+Martinsson Matilda debugger eval code:2:10
+Mazur Eva debugger eval code:2:10
+Mc Carthy Daniel debugger eval code:2:10
+Meydan Gunnel debugger eval code:2:10
+Mir Yeganeh Langroudi Narjes debugger eval code:2:10
+Molin Ulrika debugger eval code:2:10
+Monemar Anna debugger eval code:2:10
+Musatova Elena debugger eval code:2:10
+Mühr Carin debugger eval code:2:10
+Målberg Anna Lena debugger eval code:2:10
+Mökander Daniel debugger eval code:2:10
+Nekoian Fabian debugger eval code:2:10
+Nilsson Hannah debugger eval code:2:10
+Nordgren Joakim debugger eval code:2:10
+Nordin Jonas debugger eval code:2:10
+Norée Lena debugger eval code:2:10
+Nygård Sofia debugger eval code:2:10
+Nykvist Ulrika debugger eval code:2:10
+Nyreröd Stintan debugger eval code:2:10
+Odenstad Christina debugger eval code:2:10
+Ohlsén Hanna debugger eval code:2:10
+Oldner Bengtsson Anna debugger eval code:2:10
+Olsson Camilla debugger eval code:2:10
+Olsson Karin debugger eval code:2:10
+Olsson Rebecca debugger eval code:2:10
+Opsahl Tzu-Yen debugger eval code:2:10
+Ottosson Anna debugger eval code:2:10
+Pernholm Bengt debugger eval code:2:10
+Persson Benjamin debugger eval code:2:10
+Persson Clemencia debugger eval code:2:10
+Petersson Anna debugger eval code:2:10
+Petersson Johan debugger eval code:2:10
+Petrovic Vladimir debugger eval code:2:10
+Pettersson Heléne debugger eval code:2:10
+Pettersson Magdalena debugger eval code:2:10
+Pettersson Per-Åke debugger eval code:2:10
+Praxmarer Jenny debugger eval code:2:10
+Prytz Christopher debugger eval code:2:10
+Pyhäjärvi Paulina debugger eval code:2:10
+Quintana Segala Eulalia debugger eval code:2:10
+Ramazani Shene debugger eval code:2:10
+Rashidi Parvaneh debugger eval code:2:10
+Ravier-Bollard Carolina debugger eval code:2:10
+Rofes Vernhes Anna debugger eval code:2:10
+Rudenko Zoriana debugger eval code:2:10
+Ruhr Siwers Anna debugger eval code:2:10
+Runesson Johan debugger eval code:2:10
+Rörling John debugger eval code:2:10
+Said Hassan Abdurahman debugger eval code:2:10
+Saliba Fadi debugger eval code:2:10
+Sanner Ylva debugger eval code:2:10
+Schedin Åsa debugger eval code:2:10
+Schilke Niklas debugger eval code:2:10
+Siewertz Löfström Linda debugger eval code:2:10
+Sintnicolaas Eelco debugger eval code:2:10
+Sitaki Ako debugger eval code:2:10
+Sjöström Anders debugger eval code:2:10
+Skoglund Daniel debugger eval code:2:10
+Smith Adrian debugger eval code:2:10
+Steiring Lina debugger eval code:2:10
+Stenbeck Eden debugger eval code:2:10
+Stenkvist Rebecka debugger eval code:2:10
+Stenqvist Ola debugger eval code:2:10
+Stjerna Johanna debugger eval code:2:10
+Strömdahl-Sherman Malin debugger eval code:2:10
+Stårsta Anna debugger eval code:2:10
+Sundqvist Johanna debugger eval code:2:10
+Sunmark Angelica debugger eval code:2:10
+Svensson Pär debugger eval code:2:10
+Sylwan Niklas debugger eval code:2:10
+Söderlund Emmely debugger eval code:2:10
+Söderström Anna debugger eval code:2:10
+Söderström Maria debugger eval code:2:10
+Tarrodi Orlunder Jakob debugger eval code:2:10
+Tchoumak Tatiana debugger eval code:2:10
+Thelander Magnus debugger eval code:2:10
+Thilander Peter debugger eval code:2:10
+Thärnström Jenny debugger eval code:2:10
+Tjärdal Patrik debugger eval code:2:10
+Tóth Éva debugger eval code:2:10
+Vakans Ekonomi debugger eval code:2:10
+Vakans Engelska debugger eval code:2:10
+Vakans Foto debugger eval code:2:10
+Vakans Idrott debugger eval code:2:10
+Vakans IV debugger eval code:2:10
+Vakans Media Graf debugger eval code:2:10
+Vakans Media Text debugger eval code:2:10
+Vakans NA debugger eval code:2:10
+Vakans Samhällskunskap historia debugger eval code:2:10
+Vakans SH debugger eval code:2:10
+Vakans Svenska debugger eval code:2:10
+Vakans Teknik debugger eval code:2:10
+Vakans 1 Ekonomi debugger eval code:2:10
+Vakans 1 IV debugger eval code:2:10
+Vakans 1 Media debugger eval code:2:10
+Vakans 2 Sh debugger eval code:2:10
+Vakans 2 Svenska debugger eval code:2:10
+Vakans 3 Engelska debugger eval code:2:10
+Vakans 4 språk debugger eval code:2:10
+Vakans 5 Ge+Re debugger eval code:2:10
+Vakans 6 svenska debugger eval code:2:10
+VakantIV x debugger eval code:2:10
+Vasilyeva Ekaterina debugger eval code:2:10
+Vinger Max debugger eval code:2:10
+Vrethammar Oskar debugger eval code:2:10
+Wallerström Eva debugger eval code:2:10
+Wiwe Ruben debugger eval code:2:10
+Wreber Marcus debugger eval code:2:10
+Wretljung Camilla debugger eval code:2:10
+Yesilgül Zeynep debugger eval code:2:10
+Åberg Simon debugger eval code:2:10
+Åslund Maria debugger eval code:2:10
+Öberg Alexander debugger eval code:2:10
+Öberg Marcus debugger eval code:2:10
+Ölcer Baris debugger eval code:2:10
+Österberg Sofia debugger eval code:2:10
+Alvåg Carina debugger eval code:2:10
+Anderzén Marie debugger eval code:2:10
+Berge Birath Malin debugger eval code:2:10
+Betsikokos Jansson Eleni debugger eval code:2:10
+Birkmanis Lena debugger eval code:2:10
+Bjuhr Staffan debugger eval code:2:10
+Blomgren Viktoria debugger eval code:2:10
+Bodin Agneta debugger eval code:2:10
+Bryntse Bettan debugger eval code:2:10
+Cohen Tarja debugger eval code:2:10
+Dufort Y Alvarez Phoyu Lucia debugger eval code:2:10
+Ericsson Claudia debugger eval code:2:10
+Erik Johan debugger eval code:2:10
+Fugelstad Peter debugger eval code:2:10
+Giouvantsi Lina debugger eval code:2:10
+Haldin Jessica debugger eval code:2:10
+Hammarström Pernilla debugger eval code:2:10
+Hellebro Löfling Linnea debugger eval code:2:10
+Hillgren Per-Erik debugger eval code:2:10
+Häll Wesslau Ellinor debugger eval code:2:10
+Isaksson Cecilia debugger eval code:2:10
+Kibal Jaan-Erik debugger eval code:2:10
+Kidby Lindhagen Malin debugger eval code:2:10
+Killander Leonard debugger eval code:2:10
+Lagerström Ola debugger eval code:2:10
+Lannfjäll Lisa debugger eval code:2:10
+Lenneby Kajsa debugger eval code:2:10
+Malmberg Hedlund Anne-Lie debugger eval code:2:10
+Medin Engdahl Joakim debugger eval code:2:10
+Mäkelä Annette debugger eval code:2:10
+Nygren Linus debugger eval code:2:10
+Olin Felix debugger eval code:2:10
+Olofsson Krister debugger eval code:2:10
+Rafiq Saqib debugger eval code:2:10
+Roots Julia debugger eval code:2:10
+Rosén Hanna debugger eval code:2:10
+Rune Sif debugger eval code:2:10
+Sahlin Mahiyar debugger eval code:2:10
+Sparreman Nils debugger eval code:2:10
+Sälgström Rebecca debugger eval code:2:10
+Söderberg Julia debugger eval code:2:10
+Tamm Elin debugger eval code:2:10
+Tegeback Sara debugger eval code:2:10
+Unosson Anders debugger eval code:2:10
+Utas Lovisa debugger eval code:2:10
+Vateman Eriksson Anna debugger eval code:2:10
+Wallin Cecilia debugger eval code:2:10
+Westin Annika debugger eval code:2:10
+Wreber Therese debugger eval code:2:10
+Wredström Malin debugger eval code:2:10
+Zetterlund Ann-Charlott debugger eval code:2:10
+Zetterlund Linnéa debugger eval code:2:10
+Andersson Maria debugger eval code:2:10
+Björkqvist Marie debugger eval code:2:10
+Camara Hawa debugger eval code:2:10
+Edström Frida debugger eval code:2:10
+Ekberg Moa debugger eval code:2:10
+Elwin Amanda debugger eval code:2:10
+Fringel Lisa debugger eval code:2:10
+Fritzson Lena debugger eval code:2:10
+Hirori Malvina debugger eval code:2:10
+Jonsson Torbjörn debugger eval code:2:10
+Kangas Rita debugger eval code:2:10
+Kubin Gustafsson Jessica debugger eval code:2:10
+Larson Erica debugger eval code:2:10
+Petrovic Zarko debugger eval code:2:10
+Ragnhult Camilla debugger eval code:2:10
+Rojas Mauricio debugger eval code:2:10
+Stigamo Lena debugger eval code:2:10
+Tekmil Kenan debugger eval code:2:10
+Acaralp Galip debugger eval code:2:10
+Ghaemi Parastou debugger eval code:2:10
+Girmay Semere debugger eval code:2:10
+Kader Hallo debugger eval code:2:10
+Rabah Reem debugger eval code:2:10
+Tadic Ivanka debugger eval code:2:10
+Torres Blandon Enrique debugger eval code:2:10
+undefined
+y = []
+Array []
+
+for (i = 0; i < x.length; i++) {
+ y.append x[i].parentElement.textContent;
+}
+Uncaught SyntaxError: unexpected token: identifier debugger eval code:2:11
+y.append(9)
+Uncaught TypeError: y.append is not a function
+    <anonymous> debugger eval code:1
+debugger eval code:1:3
+for (i = 0; i < x.length; i++) {
+ y[i] = x[i].parentElement.textContent;
+}
+"Torres Blandon Enrique"
+y
+Array(331) [ "Holmberg Hedvig", "Häll Wesslau Ellinor", "Abbasi Persson Ashkan", "Adolphson Jan", "Al Hassani Hajer", "Al-Bacha Hind", "Alagic Murisa", "Aleman Fredrika", "Ali Abdi Hassan Said", "Ali Akbar Mohammad", … ]
+
