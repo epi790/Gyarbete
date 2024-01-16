@@ -9,6 +9,7 @@ from kivy.uix.image import Image as kivyimage
 from kivy.uix.gridlayout import GridLayout
 from kivy.core.image import Image as CoreImage
 from kivy.graphics.texture import Texture
+from kivy.uix.textinput import TextInput
 
 import keys
 import pickle
@@ -77,12 +78,24 @@ keys.generate_qr_from_key(keys.public_key_to_pem(private_key.public_key())).save
 
 
 class SimpleApp(App):
+
+    
+    
     def build(self):
-        self.image = kivyimage(source='qr.png')  # Set the default image
+        self.image = kivyimage(source='thatsayesfrom.png')  # Set the default image
+        self.username = "john"
+
+        def on_enter(instance):
+            self.username = instance.text
+            
 
         # Create two buttons
         button1 = Button(text='derived key', on_press=self.change_image1)
         button2 = Button(text='public key', on_press=self.change_image2)
+
+        #Create text input
+        textinput = TextInput(text='name', multiline=False, size_hint=(0.2,None), height=30 )
+        textinput.bind(on_text_validate=on_enter)
 
         # Create a layout and add widgets
         layout = GridLayout(cols=1, spacing=10, size_hint=(None, None), width=500, height=500)
@@ -94,15 +107,24 @@ class SimpleApp(App):
 
         # Add the button layout and the image to the main layout
         layout.add_widget(button_layout)
-        layout.add_widget(self.image)
+        layout.add_widget(self.image),
+        layout.add_widget(textinput)
+
+        
 
         return layout
 
+
+    
+
+
     def change_image1(self, instance):
         #print(shared_key)
-        print(keys.derive_new_key_from_time(shared_key))
+        
 
         derived_key = keys.derive_new_key_from_time(shared_key)
+        print(derived_key)
+
         qr = keys.generate_qr_from_key(derived_key)
         qr.save("derived_key.png")
 
@@ -113,15 +135,17 @@ class SimpleApp(App):
 
      
         self.image.source = "derived_key.png"
-        os.remove("derived_key.png")
+        self.image.reload()
+        #os.remove("derived_key.png")
 
 
     def change_image2(self, instance):
-        qr = keys.generate_qr_from_key(private_key.public_key())
+        qr = keys.generate_qr_from_key(f"{keys.public_key_to_pem(private_key.public_key()).decode()},{self.username}")
         qr.save("public.png")
         #texture = self.pil_image_to_texture(qr)
 
         self.image.source = "public.png"
+        self.image.reload()
         #self.image = kivyimage(texture=texture)  # Change the image source to image2.jpg
 
 

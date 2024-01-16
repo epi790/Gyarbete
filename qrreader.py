@@ -19,6 +19,8 @@ if __name__ == "__main__":
 
 
     while True:
+        vs = init()
+        time.sleep(3)
         #print("taking image")
         frame = vs.read()
         frame = imutils.resize(frame, width=400)

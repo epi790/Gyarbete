@@ -34,7 +34,7 @@ with open("client_private_key_pickle.pk", 'rb') as fi:
         print("OVERRIDING KEY")
         private_key = keys.generate_private_key()
         
-
+    
 if shared_key == "":
     shared_key = keys.generate_shared_key(private_key, keys.public_pem_to_key(keys.publicmasterkey))
     with open("client_private_key_pickle.pk", 'wb') as fi:

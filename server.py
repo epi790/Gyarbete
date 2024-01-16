@@ -1,25 +1,29 @@
 import keys
-from keys import masterkeypem
+from masterkey import masterkey
 import qrreader
 import sqlite3
 import time
+import base64
 
-print(masterkeypem)
+print(masterkey)
 
 database = sqlite3.connect("rudbeck.db")
 cursor = database.cursor()
 
 
-def get_name_from_key(key_pem):
-    query = f'select name from users where key is "{key_pem}";'
-    
+def get_key_from_name(name):
+    query = f'select sharedkey from shared where name is "{name}";'
     cursor.execute(query)
-    result = cursor.fetchall()
-
+    result = cursor.fetchone()
+    print(result)
+    result = base64.b16decode(result[0])
+    print("\n"*3)
+    print(result)
     return result
 
 def give_access():
-    return 1
+    print("IS HAS ARRIVED AAAAAAAAAAAAAAAAAAAAAAAa")
+    return True
 
 
 vs = qrreader.init()
@@ -41,9 +45,13 @@ while True:
     key_pem, name = result.split(",")
 
     if key_pem and name is not None:
-        dbname = get_name_from_key(key_pem)
+        sharedkey = get_key_from_name(name)
+        print("\n"*3)
+        
+        print(sharedkey)
+        
 
-        if dbname == name:
+        if keys.derive_new_key_from_time(sharedkey) == key_pem:
             give_access()
             
     print(result) 
