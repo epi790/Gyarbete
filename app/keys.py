@@ -30,7 +30,7 @@ def private_pem_to_key(pem):
     return serialization.load_pem_private_key(pem, password=None, backend=crypto_default_backend())
 
 def public_key_to_pem(key):
-    return key.public_bytes(encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo, backend=crypto_default_backend())
+    return key.public_bytes(encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo)
 
 def public_pem_to_key(pem):
     #return serialization.load_pem_public_key(pem, backend=crypto_default_backend())
@@ -51,6 +51,8 @@ def generate_shared_key(private, public):
 
     private_key = private
     public_key = public
+
+    print(private, public)
     
     shared_key = private_key.exchange(ec.ECDH(), public_key)
     return shared_key

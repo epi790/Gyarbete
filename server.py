@@ -4,19 +4,23 @@ import qrreader
 import sqlite3
 import time
 import base64
+import ast
 
-print(masterkey)
+#print(masterkey)
 
 database = sqlite3.connect("rudbeck.db")
 cursor = database.cursor()
 
 
 def get_key_from_name(name):
+    
     query = f'select sharedkey from shared where name is "{name}";'
+    #query = f'select sharedkey from shared where name is "john";'
     cursor.execute(query)
     result = cursor.fetchone()
+    
     print(result)
-    result = base64.b16decode(result[0])
+    result = base64.b64decode(result)
     print("\n"*3)
     print(result)
     return result
@@ -42,7 +46,17 @@ while True:
     if result == None:
         continue
 
+    
+    #print(base64.b64decode(result))
+
+    #result = base64.b64decode(result.decode()).decode()
+    result = ast.literal_eval(result)
+
+    result = base64.b64decode(result.decode()).decode()
+    
     key_pem, name = result.split(",")
+
+    print(key_pem, name)
 
     if key_pem and name is not None:
         sharedkey = get_key_from_name(name)

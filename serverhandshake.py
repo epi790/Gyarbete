@@ -46,24 +46,20 @@ name = ""
 print("start loop")
 while True:
 
-    result = qrreader.get_qr_data(vs)
+    result = base64.b64decode(qrreader.get_qr_data(vs))
     if result == None:
         continue
 
     else:
         print(result)
-    
-    for i in result:
-        if i == ",":
-            key_pem, name = result.split(",")
-            print(key_pem)
-            #key_pem = key_pem.replace('\'', "")[1:]
-            #print(key_pem)
-            print(key_pem.encode())
-            print("CAllING...")
-            #print(keys.generate_shared_key_pem(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode())))
-            adduser(name, base64.b16encode(keys.generate_shared_key(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode()))))
-            exit()
+
+        key_pem, name = result.split(",")
+        print(key_pem)
+        print(key_pem.encode())
+        print("CAllING...")
+        #print(keys.generate_shared_key_pem(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode())))
+        adduser(name, base64.b64encode(keys.generate_shared_key(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode()))))
+        exit()
 
     #print(result) 
     time.sleep(1)

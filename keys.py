@@ -30,13 +30,17 @@ def private_pem_to_key(pem):
     return serialization.load_pem_private_key(pem, password=None, backend=crypto_default_backend())
 
 def public_key_to_pem(key):
-    return key.public_bytes(encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo, backend=crypto_default_backend())
+    return key.public_bytes(encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo)
 
 def public_pem_to_key(pem):
+
+    public_key = serialization.load_pem_public_key(pem, backend=crypto_default_backend())
+    return public_key
+
     #return serialization.load_pem_public_key(pem, backend=crypto_default_backend())
-     if hasattr(serialization, 'load_pem_public_key'):
-        public_key = serialization.load_pem_public_key(pem, backend=crypto_default_backend())
-     else:
+    if hasattr(serialization, 'load_pem_public_key'):
+        pass
+    else:
         # Use an alternative approach for environments where load_pem_public_key doesn't support backend argument
         from cryptography.hazmat.primitives.asymmetric import dsa, rsa
         
@@ -51,6 +55,8 @@ def generate_shared_key(private, public):
 
     private_key = private
     public_key = public
+
+    print(private_key, public_key)
     
     shared_key = private_key.exchange(ec.ECDH(), public_key)
     return shared_key
@@ -91,9 +97,6 @@ def decrypt_AES256(message, key):
     decryptor = cipher.decryptor()
     plaintext = decryptor.update(message)
 
-
-    
-    
 
 #publicmasterkey = private_pem_to_key(masterkeypem)
 

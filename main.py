@@ -11,6 +11,7 @@ from kivy.core.image import Image as CoreImage
 from kivy.graphics.texture import Texture
 from kivy.uix.textinput import TextInput
 
+import base64
 import keys
 import pickle
 import os
@@ -64,7 +65,7 @@ if shared_key == "":
 
 print(shared_key)
 
-keys.generate_qr_from_key(keys.public_key_to_pem(private_key.public_key())).save("clientpubkey.png")
+#keys.generate_qr_from_key(keys.public_key_to_pem(private_key.public_key())).save("clientpubkey.png")
 # while True:
 #     derived = keys.derive_new_key_from_time(shared_key)
 #     qr = keys.generate_qr_from_key(derived)
@@ -110,22 +111,18 @@ class SimpleApp(App):
         layout.add_widget(self.image),
         layout.add_widget(textinput)
 
-        
-
         return layout
-
-
-    
-
 
     def change_image1(self, instance):
         #print(shared_key)
         
 
         derived_key = keys.derive_new_key_from_time(shared_key)
-        print(derived_key)
-
-        qr = keys.generate_qr_from_key(derived_key)
+        #print(derived_key)
+        message = f"{derived_key}, {self.username}".encode()
+        qr = keys.generate_qr_from_key(base64.b64encode(message))
+        
+        
         qr.save("derived_key.png")
 
         # Convert the QR code to a texture and update the Image widget
@@ -140,7 +137,7 @@ class SimpleApp(App):
 
 
     def change_image2(self, instance):
-        qr = keys.generate_qr_from_key(f"{keys.public_key_to_pem(private_key.public_key()).decode()},{self.username}")
+        qr = (keys.generate_qr_from_key(f"{keys.public_key_to_pem(private_key.public_key()).decode()},{self.username}"))
         qr.save("public.png")
         #texture = self.pil_image_to_texture(qr)
 

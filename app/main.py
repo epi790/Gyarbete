@@ -125,7 +125,7 @@ class SimpleApp(App):
         derived_key = keys.derive_new_key_from_time(shared_key)
         print(derived_key)
 
-        qr = keys.generate_qr_from_key(derived_key)
+        qr = keys.generate_qr_from_key(f"{derived_key},{self.username}")
         qr.save("derived_key.png")
 
         # Convert the QR code to a texture and update the Image widget
