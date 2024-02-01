@@ -5,6 +5,7 @@ import sqlite3
 import time
 import base64
 import ast
+import arduino
 
 #print(masterkey)
 
@@ -13,16 +14,16 @@ cursor = database.cursor()
 
 
 def get_key_from_name(name):
-    
+
     query = f'select sharedkey from shared where name is "{name}";'
-    #query = f'select sharedkey from shared where name is "john";'
+    
     cursor.execute(query)
     result = cursor.fetchone()
-    
-    print(result)
-    result = base64.b64decode(result)
-    print("\n"*3)
-    print(result)
+
+    if result is None:
+        return False
+
+    result = base64.b64decode(ast.literal_eval(result[0]))
     return result
 
 def give_access():
@@ -43,7 +44,9 @@ name = ""
 while True:
 
     result = qrreader.get_qr_data(vs)
+    #result = "b'\x7f\x1d\x9aAR \xd6\x93\x90\x0f9\xea\xec\xba\xe6UC\\\x87p\x10\x0f?\xe6z\x17\xa3{uEs\xd0z\x8a\x8c\xc9\xd1O\xa8O\xf6\x11\xcc\x07\xc50\x98\x1c\xe1\x83q}\xce\xa6\xde9e\x95\x94e\x804(\xea', Alve"
     if result == None:
+        #pass
         continue
 
     
@@ -53,22 +56,60 @@ while True:
     result = ast.literal_eval(result)
 
     result = base64.b64decode(result.decode()).decode()
-    
-    key_pem, name = result.split(",")
 
-    print(key_pem, name)
+    #print(result)
+    
+    #################### VIKTIGT #####################
+    key_pem, name = result.split(", ")
+    name = name.replace(' ', '')
+    ############ test utan telefon ############# 
+
+    # key_pem = """b')T\xb6vC\xb7\xf8\x9d\xf6\xb1[/\xd2\xf6X\x86\x109\xf4\xc8y;\xc6e\xed\xf5\xdc\xd6\x0b\xea\xb1\x9cu\xed\xc2\x9aB5\xb2\xe5\x12\x82\xe7I\xc0\xd6\xb1T\x93\xc8\x13\xf8"\x85\xad\xf2%X\x02NF\x1b\x95\xbe'"""
+    # name = "Alve"
+    #key_pem += "'"
+
+    #print(key_pem, name)
 
     if key_pem and name is not None:
-        sharedkey = get_key_from_name(name)
-        print("\n"*3)
-        
-        print(sharedkey)
-        
+        if get_key_from_name(name):
+            sharedkey = get_key_from_name(name)
+        else:
+            print("User not in databse")
+            time.sleep(1)
+            continue
 
-        if keys.derive_new_key_from_time(sharedkey) == key_pem:
+        #print(sharedkey)
+        if sharedkey == None:
+            time.sleep(1)
+            continue
+        #print("\n"*3)
+        
+        #print(sharedkey)
+        key_now = keys.derive_new_key_from_time(sharedkey)
+
+        def transform(key):
+            #key = bytes(key)
+            #print(key)
+            #print(type(key))
+            return key
+        
+        key_now = transform(key_now)
+        key_pem = transform(ast.literal_eval(key_pem))
+
+        print(f"Key now: {key_now}")
+        print(f"key pem: {key_pem}")
+        #print( ast.literal_eval(key_now.hex()) == ast.literal_eval(key_pem).hex())
+        print(key_now == key_pem)
+
+        if key_now == key_pem: 
             give_access()
+            #arduino.send_light("G")
+        else:
+            #arduino.send_light("R")
+            print("NUH UH ")
+
             
-    print(result) 
-    time.sleep(1)
+    #print(result) 
+    
 
 

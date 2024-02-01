@@ -1,5 +1,3 @@
-#from aztec_code_generator import AztecCode
-
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec, rsa
 from cryptography.hazmat.primitives.kdf.hkdf import HKDF
@@ -14,7 +12,6 @@ import binascii
 import qrcode
 
 publicmasterkey = b'-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEC9Po/TCrmJop3OTPLGknwMQXsnAVGcP/\nD3Kjvi99wnlQ5XXnwHNXaw5H3PmVAXGkkeEHoqEJ6LkFxakWsr+CKc4T8KHfzRNO\nAslpQrXnvV62Wu6kj5YFmDN+0IryVppd\n-----END PUBLIC KEY-----\n'
-
 
 def generate_private_key_pem():
     key = ec.generate_private_key(ec.SECP384R1).private_bytes(encoding=serialization.Encoding.PEM,format=serialization.PrivateFormat.PKCS8,encryption_algorithm=serialization.NoEncryption(), backend=crypto_default_backend())
@@ -37,11 +34,11 @@ def public_pem_to_key(pem):
     public_key = serialization.load_pem_public_key(pem, backend=crypto_default_backend())
     return public_key
 
-    #return serialization.load_pem_public_key(pem, backend=crypto_default_backend())
+    
     if hasattr(serialization, 'load_pem_public_key'):
         pass
     else:
-        # Use an alternative approach for environments where load_pem_public_key doesn't support backend argument
+        
         from cryptography.hazmat.primitives.asymmetric import dsa, rsa
         
         cert = serialization.load_pem_x509_certificate(pem, backend=crypto_default_backend())
@@ -51,8 +48,6 @@ def public_pem_to_key(pem):
             return public_key
 
 def generate_shared_key(private, public):
-    #bytetime = base64.b64encode(str(time.time()).encode())
-
     private_key = private
     public_key = public
 
@@ -61,12 +56,6 @@ def generate_shared_key(private, public):
     shared_key = private_key.exchange(ec.ECDH(), public_key)
     return shared_key
    
-
-
-#derived_key = HKDF(algorithm=hashes.SHA256(),length=256, salt=None, info=None).derive(shared_key)
-
-#bytetime = int(time.time()).to_bytes()
-
 def derive_new_key_from_time(shared_key):
     
     bytetime = b64encode(str(round(time(), -1)).encode())
@@ -97,25 +86,3 @@ def decrypt_AES256(message, key):
     decryptor = cipher.decryptor()
     plaintext = decryptor.update(message)
 
-
-#publicmasterkey = private_pem_to_key(masterkeypem)
-
-#publicmasterkey = publicmasterkey.public_key()
-
-# if __name__ == "__main__":
-#     shared_key = generate_shared_key(generate_private_key_pem(), generate_private_key_pem())
-#     while True:
-#          derived_key = derive_new_key_from_time(shared_key)
-#          generate_aztec_from_key(binascii.b2a_base64(derived_key))
-#          generate_qr_from_key("server", binascii.b2a_base64(derived_key))
-#          time.sleep(10)
-
-
-
-# load PEM key
-
-#x = serialization.load_pem_private_key(x, password=None)
-
-# derive key
-
-#derived_key = HKDF(algorithm=hashes.SHA256(),length=256, salt=None, info=None).derive(shared_key)

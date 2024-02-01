@@ -10,6 +10,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.core.image import Image as CoreImage
 from kivy.graphics.texture import Texture
 from kivy.uix.textinput import TextInput
+from kivy.clock import Clock
 
 import base64
 import keys
@@ -61,7 +62,7 @@ if shared_key == "":
             pickle.dump(shared_key, fi)
 
 
-#shared key loaded guarantee
+#########################shared key loaded guarantee #############################
 
 print(shared_key)
 
@@ -111,26 +112,21 @@ class SimpleApp(App):
         layout.add_widget(self.image),
         layout.add_widget(textinput)
 
+        Clock.schedule_interval(self.change_image1, 1)
+
         return layout
 
     def change_image1(self, instance):
-        #print(shared_key)
-        
 
         derived_key = keys.derive_new_key_from_time(shared_key)
-        #print(derived_key)
         message = f"{derived_key}, {self.username}".encode()
+        print(message)
         qr = keys.generate_qr_from_key(base64.b64encode(message))
-        
-        
         qr.save("derived_key.png")
 
         # Convert the QR code to a texture and update the Image widget
-
-       
         texture = self.pil_image_to_texture(qr)
 
-     
         self.image.source = "derived_key.png"
         self.image.reload()
         #os.remove("derived_key.png")

@@ -5,11 +5,8 @@ import sqlite3
 import time
 import base64
 
-#print(masterkeypem)
-
 database = sqlite3.connect("rudbeck.db")
 cursor = database.cursor()
-
 
 def get_name_from_key(key_pem):
     query = f'select name from users where key is "{key_pem}";'
@@ -23,15 +20,14 @@ def give_access():
     return 1
 
 def adduser(name, shared_key):
+    shared_key = base64.b64encode(shared_key)
     print("CALlEd")
     print(f"{name},{shared_key})")
-    query = f'insert into shared VALUES("{name}", "{shared_key.decode()}")'
+    query = f'insert or ignore into shared VALUES("{name}", "{shared_key}")'
     #query = 'insert into shared values("foo", "bar");'
     print(query)
     cursor.execute(query)
     database.commit()
-
-
 
 vs = qrreader.init()
 
@@ -45,23 +41,25 @@ name = ""
 
 print("start loop")
 while True:
-
-    result = base64.b64decode(qrreader.get_qr_data(vs))
+    result = qrreader.get_qr_data(vs)
+   
+  
     if result == None:
         continue
-
+   
     else:
-        print(result)
-
+        #result = base64.b64decode(result)
         key_pem, name = result.split(",")
-        print(key_pem)
-        print(key_pem.encode())
         print("CAllING...")
-        #print(keys.generate_shared_key_pem(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode())))
-        adduser(name, base64.b64encode(keys.generate_shared_key(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode()))))
+        print(keys.public_pem_to_key(key_pem.encode()))
+
+        sharedkey = keys.generate_shared_key(keys.private_pem_to_key(masterkey), keys.public_pem_to_key(key_pem.encode()))
+        print(sharedkey)
+      
+        adduser(name, sharedkey)
         exit()
 
-    #print(result) 
+  
     time.sleep(1)
 
 
