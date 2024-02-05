@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img id="imageDisplay" src="{{ derived_key_image_data }}" alt="Derived Key">
+        <div class="button-container">
+            <button data-image="{{ derived_key_image_data }}" onclick="changeImage('{{ derived_key_image_data }}')">Derived Key</button>
+            <button data-image="{{ public_key_image_data }}" onclick="changeImage('{{ public_key_image_data }}', true)">Public Key</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
