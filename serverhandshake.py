@@ -17,10 +17,6 @@ def get_name_from_key(key_pem):
     return result
 
 
-def give_access():
-    return 1
-
-
 def adduser(name, shared_key):
     shared_key = b64encode(shared_key)
     query = f'insert or ignore into shared VALUES("{name}", "{shared_key}")'

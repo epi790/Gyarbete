@@ -7,10 +7,10 @@ import base64
 import ast
 import serial
 
-#arduino_port = '/dev/ttyACM0' 
+arduino_port = '/dev/ttyACM0' 
 database = sqlite3.connect("rudbeck.db")
 cursor = database.cursor()
-#ser = serial.Serial(arduino_port, 9600, timeout=1)
+ser = serial.Serial(arduino_port, 9600, timeout=1)
 
 
 def send_light(color):
@@ -61,7 +61,8 @@ while True:
             sharedkey = get_key_from_name(name)
         else:
             print("User not in databse")
-            time.sleep(0.5)
+            send_light("R")
+            #time.sleep(0.5)
             continue
 
         if sharedkey == None:
@@ -72,10 +73,10 @@ while True:
 
         if key_now == key_pem: 
             print("welcome")
-            #send_light("G")
+            send_light("G")
             
         else:
             print("NUH UH ")
-            #send_light("R")
+            send_light("R")
     time.sleep(1)
             
